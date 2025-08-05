@@ -37,5 +37,16 @@ public class LoginTests extends TestBase {
         app.getHelperUser().submitLogin();
     }
 
+    @Test
+    public void loginWrongEmail(){
 
+    }
+
+    public void loginWrongPassword(){
+
+    }
+
+    public void loginWrongUnregisteredUser(){
+
+    }
 }
