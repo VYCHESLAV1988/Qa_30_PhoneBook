@@ -1,3 +1,4 @@
+
 package manager;
 
 import org.openqa.selenium.By;
@@ -10,40 +11,38 @@ public class HelperUser extends HelperBase {
         super(wd);
     }
 
-    //Created method open login registration form
-    public void openLoginRegistrationForm(){
-        WebElement loginTab = wd.findElement(By.cssSelector("a[href='/login']"));
-        //xPath ==> //a[text()='LOGIN']
-       // loginTab.click();
+    public void openLoginRegistrationForm() {
+//        WebElement loginTab = wd.findElement(By.cssSelector("a[href='/login']"));
+//        //xPath -->//a[text()='LOGIN']
+//        loginTab.click();
+
         click(By.cssSelector("a[href='/login']"));
     }
 
-    public void fillLoginRegistrationForm(){
-        //WebElement emailInput = wd.findElement(By.name("email"));
-       // emailInput.click();
-       //emailInput.clear();
-        //emailInput.sendKeys(email);
-        type(By.name("email",email); //var 2
+    public void fillLoginRegistrationForm(String email, String password) {
+//        WebElement emailInput = wd.findElement(By.name("email"));
+//        emailInput.click();
+//        emailInput.clear();
+//        emailInput.sendKeys(email);
+        type(By.name("email"), email);
+
+//        WebElement passwordInput = wd.findElement(By.xpath("//input[@name='password']"));
+//        passwordInput.click();
+//        passwordInput.clear();
+//        passwordInput.sendKeys(password);
+        type(By.xpath("//input[@name='password']"), password);
 
     }
 
-    public void passwordInput(){
-        //WebElement passwordInput = wd.findElement(By.name("password"));
-        //passwordInput.click();
-        //passwordInput.clear();
-        //passwordInput.sendKeys(email);
-        type(By.name("password",password));
-    }
-
-    public void sabmitLogin(){
-        click(By.xpath("//button[text()='/LOGIN')]");
+    public void submitLogin() {
+        click(By.xpath("//button[text()='Login']"));
     }
 
     public boolean isLogged() {
-        return isElementPresent(By.xpath("//buton[text()='Sign Out']"));
+        return isElementPresent(By.xpath("//button[text()='Sign Out']"));
     }
 
     public void logout() {
-        click(By.xpath("//buton[text()='Sign Out']"));
+        click(By.xpath("//button[text()='Sign Out']"));
     }
 }
